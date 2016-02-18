@@ -1,0 +1,44 @@
+﻿<Window x:Class="FtpClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" Height="287" Width="573">
+    <Grid>
+        <Button x:Name="btnRun" 
+                    Content="RUN"
+                    Click="btnRun_Click" Margin="55,85,0,0" ClickMode="Press" IsEnabled="False" HorizontalAlignment="Left" Width="50" Height="36" VerticalAlignment="Top"/>
+        <StackPanel Margin="10,10,0,0" Orientation="Vertical" HorizontalAlignment ="Left"
+                    PreviewTextInput="pnl_PreviewTextInput" PreviewKeyDown="pnl_PreviewKeyDown" Width="106" Height="73" VerticalAlignment="Top">
+
+            <DatePicker x:Name="calendar" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" FirstDayOfWeek="Monday"/>
+            <Grid>
+                <TextBlock x:Name="textBlock" Margin="3,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter a hour" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxHour" Margin="82,0,0,0" BorderBrush="Black" 
+                         HorizontalAlignment="Left" Height="18" Width="18" VerticalAlignment="Top"  
+                         TextAlignment="Center" MaxLines="1" MaxLength="2"
+                         TextChanged="textBox_TextChanged"/>
+            </Grid>
+            <TextBox x:Name="textBoxPhoneNumber" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,2,0,0"
+                     Height="23" Width="100" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"
+                     TextChanged="textBox_TextChanged"/>
+        </StackPanel>
+
+        <ListView x:Name="listView" Margin="129,5,8,71" BorderThickness="1" BorderBrush="Black" IsEnabled="False">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="257,0,0,29" Width="75" Click="btnSave_Click" IsEnabled="False"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment ="Left" Width="35" Margin="10,81,0,0" Height="48" VerticalAlignment="Top">
+            <RadioButton x:Name="key5" Content="5" HorizontalAlignment="Left" Width="30" IsChecked="True" />
+            <RadioButton x:Name="key8" Content="8" HorizontalAlignment="Left" Width="36" />
+            <RadioButton x:Name="key9" Content="9" HorizontalAlignment="Left" Width="30" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
